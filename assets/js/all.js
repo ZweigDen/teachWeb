@@ -27,5 +27,17 @@ function swiper(){
           }
       });
 }
+// menuBtn
+function btn(){
+  var menuButton = document.querySelector(".menu-button");
+        menuButton.addEventListener("click",myPrev);
+        function myPrev(){
+            $('.menu-button').toggleClass("cross bgBlack");
+        }
+}
 
-window.onload = swiper
+function init(){
+  btn();
+  swiper();
+}
+window.onload = init;
