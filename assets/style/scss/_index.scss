@@ -15,16 +15,32 @@
     border:1px solid #fff;
     border-radius: 50px;
 }
-
 .bg1{
-    background-image: url('../../images/index-1.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    top:0;
-    bottom:0;
-    width: 100%;
-    z-index: -1;
+    z-index: -11;
+}
+.carouselIndicators{
+    position: absolute;
+    bottom:50%;
+    right: 3%;
+    z-index: 15;
+    transform: translateY(50%);
+    
+      .active {
+        opacity: 1;
+      }
+  }
+  .active.circle::after{
+    content:"";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+  }
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    border: 1px solid #fff;
 }
 // pickup
 .pickBox{
@@ -168,5 +184,20 @@
 .wrapper .button:hover .icon i{
     color:#fff;
 }
+
+
+// rwd 平板 768
+@media (max-width: 767px){
+    .pickBox{
+        width: 307px;
+        height: 216px;
+    }
+    .pickUp{
+        margin-top: -140px;
+        border-radius: 0 0 0 0;
+        
+    }
+}
+
 
 
