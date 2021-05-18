@@ -26,7 +26,7 @@
     position: relative;
     background-color: rgba(255,255,255,0);
 }
-.swiper-pagination-bullet-active::after{
+.swiper-pagination-bullet-active::before{
     content:"";
     position: absolute;
     width: 5px;
@@ -36,4 +36,41 @@
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
+    border:1px solid #fff;
+    animation: border 4s ;
+}
+
+.swiper-pagination-bullet-active::after{
+    content:"";
+    position: absolute;
+    height: 1px;
+    width: 0px;
+    background-color: #fff;
+    border-radius:0;
+    top:50%;
+    left:50%;
+    transform:translatey(-50%);
+    animation: line 1s linear ;
+    animation-fill-mode:forwards;
+}
+
+
+@keyframes line {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 53px;
+    }
+}
+@keyframes border {
+    0% {
+        padding: 15px;
+    }
+    50% {
+        padding: 0px;
+    }
+    100% {
+        padding: 15px;
+    }
 }
