@@ -29,8 +29,8 @@
 .swiper-pagination-bullet-active::before{
     content:"";
     position: absolute;
-    width: 5px;
-    height: 5px;
+
+
     background-color: #fff;
     border-radius:50%;
     top:50%;
@@ -60,7 +60,7 @@
         width: 0px;
     }
     100% {
-        width: 53px;
+        width: 100%;
     }
 }
 @keyframes border {
@@ -68,7 +68,7 @@
         padding: 15px;
     }
     50% {
-        padding: 0px;
+        padding: 2px;
     }
     100% {
         padding: 15px;

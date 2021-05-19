@@ -2,8 +2,13 @@
 @import "variables";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/bootstrap";
+//  自定義bootstrap5
+@import "offcanvas";
 
+// 首頁及分頁
 @import "main";
 @import "index";
+
+// 自定義幻燈片
 @import "swiper1";
 @import "swiper2";
