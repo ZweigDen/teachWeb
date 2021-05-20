@@ -26,10 +26,10 @@
     <!-- banner &header -->
     <header class="h100vh d-flex flex-column justify-content-between">
         <!-- banner -->
-        <section class="d-flex align-items-center p-5 mb-9 mb-lg-0">
-            <div class="col-6 col-lg-4">
-                <h1><a href="index.html" class="d-flex flex-column text-decoration-none text-white"><span
-                            class="h6">学校法人 未来創造学園</span><span class="h3">熊本電子ビジネス専門学校</span></a></h1>
+        <section class="d-flex align-items-center mb-10 mb-sm-9 mb-lg-0 p-2 p-sm-5">
+            <div class="col-sm-6 vol-8 col-lg-4 pl-0">
+                <h1 class="tittleIndex"><a href="index.html" class="d-flex flex-column text-decoration-none"><span
+                            class="h6">学校法人 未来創造学園</span><span class="h2">熊本電子ビジネス専門学校</span></a></h1>
             </div>
             <div class="col-4 d-none d-lg-block">
                 <div class="d-flex justify-content-center">
@@ -62,7 +62,7 @@
             </div>
         </section>
         <!-- header content -->
-        <section class="text-white pl-6 p-lg-9">
+        <section class="text-white pl-2 pl-sm-6 p-lg-9">
             <div data-aos="animate__bounceInDown">
                 <p class="h6">Grow up. Turn professional.</p>
                 <p class="h1 d-flex"><span class="animate__delay-1s" data-aos="animate__rotateInDownLeft">大</span><span
@@ -79,14 +79,16 @@
                         data-aos="animate__rotateInDownRight">る</span><span class="animate__delay-1s"
                         data-aos="animate__rotateInDownRight">。</span></p>
                 <div class="row">
-                    <div class="col-lg-4 col-6">
+                    <div class="col-lg-4 col-sm-6 col-9">
                         <p class="h6">IT&ビジネスの専門学校
                             DENBI。卒業生の多くが、さまざまな専門分野で活躍しています。生き方はそれぞれ、でも、みんな、しっかりとした大人として。そして、今。あなたは、大人への入り口に立っています。</p>
                     </div>
                 </div>
             </div>
             <!-- 幻燈片按鈕 -->
-            <div class="swiper-pagination d-flex flex-column"></div>
+            <div class="d-none d-sm-block">
+                <div class="swiper-pagination d-flex flex-column"></div>
+            </div>
         </section>
         <!-- 幻燈片 -->
         <section class="fixed-top bg1">
@@ -111,8 +113,8 @@
                 <div class="bar"></div>
             </a>
             <!-- modal -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
-                style="width:70%">
+            <div class="offcanvas offcanvas-end offcanContent" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <h5 id="offcanvasRightLabel">Offcanvas right</h5>
                 </div>
@@ -130,8 +132,8 @@
         <section class="pl-lg-5">
             <div class="pl-lg-6 pt-3 pb-5 pickUp bg-white" data-aos="animate__bounceInRight" data-aos-once="true"
                 data-aos-offset="80">
-                <h5 class="mb-4 text-secondary pl-6 pl-lg-0">- Pick up</h5>
-                <div class="swiper-container pl-6 pl-lg-0 ">
+                <h5 class="mb-sm-4 mb-2 text-secondary pl-2 pl-sm-6 pl-lg-0">- Pick up</h5>
+                <div class="swiper-container pl-2 pl-sm-6 pl-lg-0 ">
                     <div class="swiper-wrapper" id="topChoice">
                         <div class="swiper-slide swiperHover">
                             <a href="#" class="text-dark text-decoration-none">
@@ -200,12 +202,12 @@
         <section class="bg-white pt-10 pb-7 nbMargin">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-6 mb-6 mb-lg-0">
-                        <div class="d-flex align-items-center mb-3">
-                            <h3 class="font-weight-bold">News</h3>
+                    <div class="col-12 col-lg-6 mb-6 border-sm-0 border-bottom pb-1 mb-lg-0">
+                        <div class="d-sm-flex align-items-center mb-3">
+                            <h3 class="font-weight-bold mb-3 mb-sm-0">News</h3>
                             <ul class="list-unstyled d-flex mb-0 align-items-center">
-                                <li class="ml-4 h6">/</li>
-                                <li class="ml-2 btn btn-dark rounded-pill h6 newBlogHover p-0">すべて</li>
+                                <li class="ml-4 h6 d-none d-sm-block">/</li>
+                                <li class="ml-sm-2 btn btn-dark rounded-pill h6 newBlogHover p-0">すべて</li>
                                 <li class="ml-2 btn h6 text-secondary newBlogHover p-0">イベント</li>
                                 <li class="ml-2 btn h6 text-secondary newBlogHover p-0">お知らせ</li>
                                 <li class="ml-2 btn h6 text-secondary newBlogHover p-0">資格・検定</li>
@@ -246,12 +248,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="d-flex align-items-center mb-3">
-                            <h3 class="font-weight-bold">DENBI Blog</h3>
+                    <div class="col-12 col-lg-6 border-bottom pb-1">
+                        <div class="d-sm-flex align-items-center mb-3">
+                            <h3 class="font-weight-bold mb-3 mb-sm-0">DENBI Blog</h3>
                             <ul class="list-unstyled d-flex mb-0 align-items-center">
-                                <li class="ml-4 h6">/</li>
-                                <li class="ml-2 btn btn-dark rounded-pill h6 newBlogHover p-0">すて</li>
+                                <li class="ml-4 h6 d-none d-sm-block d-none d-sm-none">/</li>
+                                <li class="ml-sm-2 btn btn-dark rounded-pill h6 newBlogHover p-0">すて</li>
                                 <li class="ml-2 btn h6 text-secondary newBlogHover p-0">情報</li>
                                 <li class="ml-2 btn h6 text-secondary newBlogHover p-0">ビジ系</li>
                                 <li class="ml-2 btn h6 text-secondary newBlogHover p-0">インタ</li>
@@ -298,8 +300,8 @@
             </div>
         </section>
         <!-- 優點 -->
-        <section class="pr-7 bg-white overflow-hidden">
-            <div class="bg2 text-white pt-7 pl-7">
+        <section class="pr-lg-7 bg-white overflow-hidden">
+            <div class="bg2 text-white pt-7 pl-lg-7 pl-sm-5 pl-2">
                 <h4 class="mb-2">選ばれ続ける4つの魅力</h4>
                 <h2 class="mb-5 d-flex">
                     <i class="fas fa-exclamation mr-3" style="animation-delay: calc(1s * 0.1);"
@@ -320,7 +322,7 @@
                 <div>
                     <a href="#" class="bg3 border-bottom meritHover d-block text-white text-decoration-none">
                         <div class="pt-10 pl-7 pb-5">
-                            <section class="col-4 animate__faster" data-aos="animate__fadeIn">
+                            <section class="col-lg-4 col-7 animate__faster" data-aos="animate__fadeIn">
                                 <h5 class="mb-1 pl-3">徹底實踐xxxxx</h5>
                                 <h3 class="mb-4"># 就職xxx強</h3>
                                 <p class="mb-4">
@@ -332,7 +334,7 @@
                     </a>
                     <a href="#" class="bg4 border-bottom meritHover d-block text-white text-decoration-none">
                         <div class="pt-10 pl-7 pb-5">
-                            <section class="col-4 animate__faster" data-aos="animate__fadeIn">
+                            <section class="col-lg-4 col-7 animate__faster" data-aos="animate__fadeIn">
                                 <h5 class="mb-1 pl-3">徹底實踐xxxxx</h5>
                                 <h3 class="mb-4"># 就職xxx強</h3>
                                 <p class="mb-4">
@@ -344,7 +346,7 @@
                     </a>
                     <a href="#" class="bg3 border-bottom meritHover d-block text-white text-decoration-none">
                         <div class="pt-10 pl-7 pb-5">
-                            <section class="col-4 animate__faster" data-aos="animate__fadeIn">
+                            <section class="col-lg-4 col-7 animate__faster" data-aos="animate__fadeIn">
                                 <h5 class="mb-1 pl-3">徹底實踐xxxxx</h5>
                                 <h3 class="mb-4"># 就職xxx強</h3>
                                 <p class="mb-4">
@@ -356,7 +358,7 @@
                     </a>
                     <a href="#" class="bg4 meritHover d-block text-white text-decoration-none">
                         <div class="pt-10 pl-7 pb-5">
-                            <section class="col-4 animate__faster" data-aos="animate__fadeIn">
+                            <section class="col-lg-4 col-7 animate__faster" data-aos="animate__fadeIn">
                                 <h5 class="mb-1 pl-3">徹底實踐xxxxx</h5>
                                 <h3 class="mb-4"># 就職xxx強</h3>
                                 <p class="mb-4">
@@ -370,8 +372,8 @@
             </div>
         </section>
         <!-- 学科 -->
-        <section class="p-7 bg-white">
-            <h2 class="mb-5 d-flex">
+        <section class="p-sm-7 pl-2 bg-white pb-7">
+            <h2 class="mb-sm-5 mb-3 d-flex">
                 <span style="animation-delay: calc(1s * 0.1);" data-aos="animate__rotateInDownLeft"><i
                         class="fas fa-exclamation mr-3"></i></span>
                 <span style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">学</span>
@@ -382,74 +384,155 @@
                 <span style="animation-delay: calc(1s * 0.7);" data-aos="animate__rotateInDownLeft">ス</span>
 
             </h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col-6 col-lg-4 animate__faster" data-aos="animate__fadeInDown">
-                    <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
-                    <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
-                    <div class="card border-0">
-                        <img src="assets/images/course_dc.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
+            <!-- 平板電腦 一般 -->
+            <div class="d-sm-block d-none">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col-6 col-lg-4 animate__faster" data-aos="animate__fadeInDown">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_dc.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-lg-4 pt-lg-6 animate__fast" data-aos="animate__fadeInDown">
-                    <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
-                    <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
-                    <div class="card border-0">
-                        <img src="assets/images/course_ib.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
+                    <div class="col-6 col-lg-4 pt-lg-6 animate__fast" data-aos="animate__fadeInDown">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_ib.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-lg-4 pt-lg-8" data-aos="animate__fadeInDown">
-                    <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
-                    <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
-                    <div class="card border-0">
-                        <img src="assets/images/course_ie.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content.</p>
+                    <div class="col-6 col-lg-4 pt-lg-8" data-aos="animate__fadeInDown">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_ie.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-lg-4 animate__faster" data-aos="animate__fadeInUp">
-                    <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
-                    <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
-                    <div class="card border-0">
-                        <img src="assets/images/course_ij.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
+                    <div class="col-6 col-lg-4 animate__faster" data-aos="animate__fadeInUp">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_ij.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-lg-4 pt-lg-6 animate__fast" data-aos="animate__fadeInUp">
-                    <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
-                    <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
-                    <div class="card border-0">
-                        <img src="assets/images/course_sb.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
+                    <div class="col-6 col-lg-4 pt-lg-6 animate__fast" data-aos="animate__fadeInUp">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_sb.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- 手機模式幻燈片 -->
+            <div class="swiper-container d-sm-none">
+                <div class="swiper-wrapper" id="topChoice">
+                    <div class="swiper-slide">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_dc.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_ib.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_ie.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_ij.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <h6 class="mb-1 text-secondary">即戦力として通用するプロを育成</h6>
+                        <h3 class="font-weight-bolder mb-2">ITエンジニア科</h3>
+                        <div class="card border-0">
+                            <img src="assets/images/course_sb.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Arrows -->
+                <!-- <div class="swiper-button-next d-none d-sm-block"></div>
+                <div class="swiper-button-prev d-none d-sm-block"></div> -->
+            </div>
         </section>
         <!-- Open Campus -->
-        <section class="bg-white pr-7 pb-9">
+        <section class="bg-white pr-lg-7 pr-sm-5  pb-sm-9">
             <div class="position-relative">
                 <img src="assets/images/oc_figure.webp" alt="" class="openCamp">
-                <div class="position-absolute bg-white p-7  openCamp openCampPostion">
+                <div class="position-sm-absolute bg-white p-lg-7 p-2 openCamp openCampPostion">
                     <div data-aos="animate__fadeInLeft">
                         <h4 class="mb-4">オープンキャンパスは、</h4>
                         <h2 class="mb-6">DENBIのリアルに触れるチャンス。<br>
@@ -463,15 +546,15 @@
             </div>
         </section>
         <!-- otherLink-->
-        <section class="bg-light p-7">
+        <section class="bg-light p-lg-7 p-sm-5 p-2">
             <div class="row">
-                <div class="col-6 otherLink">
+                <div class="col-sm-6 col-12 otherLink">
                     <a href="#" class="text-dark text-decoration-none d-block border-bottom">
-                        <div class="d-flex align-items-center p-3">
+                        <div class="d-flex align-items-center p-lg-3 p-2">
                             <div class="w166">
                                 <img src="assets/images/other_employment.webp" alt="">
                             </div>
-                            <div class="ml-3 d-flex align-items-center justify-content-between">
+                            <div class="ml-3 d-flex align-items-center">
                                 <div>
                                     <h4 class="mb-2 line-ex1">キャンパスライフ</h4>
                                     <h5 class="text-secondary">
@@ -479,12 +562,12 @@
                                         励まし合いながら過ごす、充実の2年間。
                                     </h5>
                                 </div>
-                                <i class="fas fa-caret-right ml-6"></i>
+                                <i class="fas fa-caret-right ml-6 d-none d-lg-block"></i>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-6 otherLink">
+                <div class="col-sm-6 col-12 otherLink">
                     <a href="#" class="text-dark text-decoration-none d-block border-bottom">
                         <div class="d-flex align-items-center p-3">
                             <div class="w166">
@@ -498,12 +581,12 @@
                                         励まし合いながら過ごす、充実の2年間。
                                     </h5>
                                 </div>
-                                <i class="fas fa-caret-right ml-6"></i>
+                                <i class="fas fa-caret-right ml-6 d-none d-lg-block"></i>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-6 otherLink">
+                <div class="col-sm-6 col-12 otherLink">
                     <a href="#" class="text-dark text-decoration-none d-block border-bottom">
                         <div class="d-flex align-items-center p-3">
                             <div class="w166">
@@ -517,12 +600,12 @@
                                         励まし合いながら過ごす、充実の2年間。
                                     </h5>
                                 </div>
-                                <i class="fas fa-caret-right ml-6"></i>
+                                <i class="fas fa-caret-right ml-6 d-none d-lg-block"></i>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-6 otherLink">
+                <div class="col-sm-6 col-12 otherLink">
                     <a href="#" class="text-dark text-decoration-none d-block border-bottom">
                         <div class="d-flex align-items-center p-3">
                             <div class="w166">
@@ -536,12 +619,12 @@
                                         励まし合いながら過ごす、充実の2年間。
                                     </h5>
                                 </div>
-                                <i class="fas fa-caret-right ml-6"></i>
+                                <i class="fas fa-caret-right ml-6 d-none d-lg-block"></i>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-6 otherLink ">
+                <div class="col-sm-6 col-12 otherLink ">
                     <a href="#" class="text-dark text-decoration-none d-block border-bottom">
                         <div class="d-flex align-items-center p-3">
                             <div class="w166">
@@ -555,7 +638,7 @@
                                         励まし合いながら過ごす、充実の2年間。
                                     </h5>
                                 </div>
-                                <i class="fas fa-caret-right ml-6"></i>
+                                <i class="fas fa-caret-right ml-6 d-none d-lg-block"></i>
                             </div>
                         </div>
                     </a>
@@ -563,7 +646,7 @@
             </div>
         </section>
         <!-- 社群 -->
-        <section class="bg-light pb-7">
+        <section class="bg-light pb-7 pt-3">
             <div class="wrapper d-flex justify-content-center">
                 <div class="button fb mx-3">
                     <div class="icon">

@@ -18,6 +18,9 @@
 .bg1{
     z-index: -11;
 }
+.tittleIndex a{
+    color:#fff;
+}
 .carouselIndicators{
     position: absolute;
     bottom:50%;
@@ -137,7 +140,6 @@
 }
 .openCampPostion{
     top:55%;
-
 }
 // otherLink
 .otherLink:hover a{
@@ -163,6 +165,10 @@
     bottom: 0;
     left: 0;
     transition: all .3s linear;
+}
+.w166{
+    width: 166px;
+    height: 102px;
 }
 // 社群
 .wrapper .button{
@@ -200,10 +206,13 @@
 .wrapper .button:hover .icon i{
     color:#fff;
 }
-
+// 
 
 // rwd 平板 768
 @media (max-width: 767px){
+    .offcanContent{
+        width: 100%;
+    }
     .pickBox{
         width: 307px;
         height: 216px;
@@ -212,6 +221,35 @@
         margin-top: -160px;
         border-radius: 0 0 0 0;
         
+    }
+    .bg3 &.bg4{
+        max-height: 479px;
+    }
+    .w166 img{
+        width: 95px;
+        height: 95px;
+    }
+}
+// mobile 手機 376
+@media(max-width:375px){
+    .tittleIndex a{
+        color: #000;
+    }
+    .h2{
+        font-size:16px;
+    }
+    .h1{
+        font-size:36px;
+    }
+    .pickUp{
+        margin-top: 0px;
+    }
+    .nbMargin{
+        margin-top: -220px;
+    }
+    .openCamp{
+        border-radius: 0px;
+        top:0px;
     }
 }
 
