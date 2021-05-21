@@ -139,6 +139,7 @@
     border-radius: 0 12px 12px 0;
 }
 .openCampPostion{
+    position: absolute;
     top:55%;
 }
 // otherLink
@@ -266,6 +267,9 @@
     .openCamp{
         border-radius: 0px;
         top:0px;
+    }
+    .openCampPostion{
+        position: relative;
     }
 }
 
