@@ -1,3 +1,10 @@
+const closeAlert = document.querySelector('.alertNew');
+const closeBtn = document.querySelector('.closeBtn');
+closeBtn.addEventListener('click',function(){
+  closeAlert.classList.add('d-none');
+});
+
+
 function currSwiper(){
   var swiper = new Swiper(".currSwiper", {
     spaceBetween: 30,

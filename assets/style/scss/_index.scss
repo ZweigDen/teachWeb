@@ -206,7 +206,23 @@
 .wrapper .button:hover .icon i{
     color:#fff;
 }
-// 
+// footer
+// 左下廣告
+.alertNew{
+    position: relative;
+}
+.alertNew div::after{
+    content:"6/29";
+    position: absolute;
+    text-align: center;
+    line-height:70px;
+    width: 70px;
+    height: 70px;
+    right:-15px;
+    bottom:-15px;
+    border-radius: 50%;
+    background: goldenrod;
+}
 
 // rwd 平板 768
 @media (max-width: 767px){
