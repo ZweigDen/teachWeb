@@ -8,7 +8,7 @@
     border:1px solid #fff;
 }
 .swiper-pagination{
-    right:3%;
+    right:0;
     top: 30%;
 }
 .swiper-pagination-bullet-active
@@ -29,8 +29,6 @@
 .swiper-pagination-bullet-active::before{
     content:"";
     position: absolute;
-
-
     background-color: #fff;
     border-radius:50%;
     top:50%;
@@ -50,7 +48,7 @@
     top:50%;
     left:50%;
     transform:translatey(-50%);
-    animation: line 1s linear ;
+    animation: line 2s linear ;
     animation-fill-mode:forwards;
 }
 
@@ -60,7 +58,7 @@
         width: 0px;
     }
     100% {
-        width: 100%;
+        width: 100px;
     }
 }
 @keyframes border {
