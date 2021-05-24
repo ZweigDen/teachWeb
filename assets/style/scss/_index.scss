@@ -214,6 +214,19 @@
 // 左下廣告
 .alertNew{
     position: relative;
+    button:hover{
+            animation: deg 0.3s linear ;
+            animation-fill-mode:forwards;
+    }
+}
+// 小動畫
+@keyframes deg {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(90deg);
+    }
 }
 .alertNew div::after{
     content:"6/29";

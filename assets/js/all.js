@@ -6,7 +6,6 @@ closeBtn.addEventListener('click',function(){
 
 
 window.addEventListener("scroll", function(){
-  console.log(window.scrollY)
   if(window.scrollY>500){
     $('.menuAnimated').addClass('menufadeIn');
   } else if(window.scrollY<500){
