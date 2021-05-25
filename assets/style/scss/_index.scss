@@ -212,6 +212,12 @@
 }
 // footer
 // 左下廣告
+.fixedBottomRight{
+    position:fixed;
+    bottom:0;
+    right:0;
+    display: inline;
+}
 .alertNew{
     position: relative;
     button:hover{
