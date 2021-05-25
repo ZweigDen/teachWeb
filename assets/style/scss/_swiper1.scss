@@ -1,6 +1,10 @@
-.bgImg .swiper-slide img{
+.bgImg .swiper-slide{
     width: 100%;
     height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .swiper-pagination-bullet{
     width: 30px;
