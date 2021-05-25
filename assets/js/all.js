@@ -8,8 +8,10 @@ closeBtn.addEventListener('click',function(){
 window.addEventListener("scroll", function(){
   if(window.scrollY>500){
     $('.menuAnimated').addClass('menufadeIn');
+    $('.tittleFixed').addClass('menufadeIn');
   } else if(window.scrollY<500){
     $('.menuAnimated').removeClass('menufadeIn');
+    $('.tittleFixed').removeClass('menufadeIn');
   }
 });
 

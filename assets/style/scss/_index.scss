@@ -301,6 +301,11 @@
 }
 // mobile 手機 376
 @media(max-width:375px){
+    .tittleFixed{
+        position:fixed;
+        top:0;
+        z-index: 22;
+    }
     .tittleIndex a{
         color: #000;
     }
