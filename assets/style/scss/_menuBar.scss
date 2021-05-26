@@ -9,6 +9,17 @@
             background-color: #000;
         }
     }
+    .button2 .icon{
+        color: $secondary;
+    }
+    .btn2:hover .icon{
+        color:#fff;
+        background: #000;
+    }
+    .borderRadius2{
+        border:1px solid $secondary;
+        border-radius: 50px;
+    }
 
     @media(max-width:375px){
         .menuAnimated{
