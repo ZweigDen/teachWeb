@@ -4,20 +4,6 @@ closeBtn.addEventListener('click',function(){
   closeAlert.classList.add('d-none');
 });
 
-
-window.addEventListener("scroll", function(){
-  if(window.scrollY>500){
-    $('.menuAnimated').addClass('menufadeIn');
-    $('.tittleFixed').addClass('menufadeIn');
-  } else if(window.scrollY<500){
-    $('.menuAnimated').removeClass('menufadeIn');
-    $('.tittleFixed').removeClass('menufadeIn');
-  }
-});
-
-
-
-
 function currSwiper(){
   var swiper = new Swiper(".currSwiper", {
     spaceBetween: 30,
@@ -66,19 +52,11 @@ function swiper() {
     }
   });
 }
-// menuBtn
-function btn() {
-  var menuButton = document.querySelector(".menu-button");
-  menuButton.addEventListener("click", myPrev);
-  function myPrev() {
-    $('.menu-button').toggleClass("cross bgBlack");
-  }
-}
 
 function init() {
-  btn();
   swiper();
   currSwiper();
+  alert(`疫情影響，目前推出線上影音課程，請點選上方購買課程！`);
 }
 window.onload = init;
 

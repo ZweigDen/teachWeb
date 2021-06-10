@@ -5,9 +5,13 @@
 //  自定義bootstrap5
 @import "offcanvas";
 
+// layout
+@import "layout";
+
 // 首頁及分頁
 @import "main";
 @import "index";
+@import "product";
 
 // 自定義幻燈片
 @import "swiper1";

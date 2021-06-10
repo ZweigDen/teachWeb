@@ -1,0 +1,33 @@
+.borderRadius{
+    border:1px solid #fff;
+    border-radius: 50px;
+}
+// index icon
+.button .icon{
+    color:#fff;
+}
+.btn:hover .icon{
+    color:#000;
+    background: #fff;
+}
+.button:hover .icon{
+    color:#000;
+    background: #fff;
+}
+
+// 其他分頁的icon
+.borderRadiusIn{
+    border:1px solid #000000;
+    border-radius: 50px;
+}
+.buttonIn .icon{
+    color:#000;
+}
+.btnIn:hover .icon{
+    color:#fff;
+    background: #000;
+}
+.buttonIn:hover .icon{
+    color:#fff;
+    background: #000;
+}
