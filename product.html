@@ -113,18 +113,16 @@
                 </div>
             </section>
             <!-- productList -->
-            <section class="mb-7">
-                <div class="card-group">
-                    <div class="card border-0 mx-2">
-                        <img class="card-img-top" alt="...">
+            <section class="mb-7 p-7">
+                <div class="card-columns">
+                    <div class="card border-0 cardShadow mx-2 mb-7" v-for="item in products" :key="item.id">
+                        <img :src=item.imageUrl class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text"></p>
-                            <p class="card-text"></p>
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">${{ item.price }}</p>
+                            <p class="card-text">{{ item.description }}</p>
                         </div>
-                        <div class="">
-                            <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
-                        </div>
+                        <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
                     </div>
                 </div>
             </section>

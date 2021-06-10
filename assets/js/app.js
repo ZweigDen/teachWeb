@@ -36,8 +36,12 @@ const app = Vue.createApp({
             axios.get(api)
             .then(res=>{
                 if(res.data.success){
-                    this.cart = res.data.data
+                    this.cart = res.data.data;
+                } else{
+                    console.log(res);
                 }
+            }).catch(err=>{
+                consol.log(err);
             })
         }
     },
