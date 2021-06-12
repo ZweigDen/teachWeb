@@ -56,7 +56,6 @@ function swiper() {
 function init() {
   swiper();
   currSwiper();
-  alert(`疫情影響，目前推出線上影音課程，請點選上方購買課程！`);
 }
 window.onload = init;
 

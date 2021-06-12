@@ -1,55 +1,23 @@
-const apiUrl = 'https://vue3-course-api.hexschool.io';
-const apiPath = "jimnycourse";
+import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.esm-browser.js';
+import loginModal from './loginModal.js';
 
-const app = Vue.createApp({
+
+const app = createApp({
     data() {
         return {
-            products: [],
-            product: {},
-            form: {
-                user: {
-                    name: '',
-                    email: '',
-                    tel: '',
-                    address: '',
-                }
-            },
-            cart: {},
-        };
-    },
-    methods: {
-        getProducts() {
-            const api = `${apiUrl}/api/${apiPath}/products`;
-            axios.get(api)
-                .then(res => {
-                    if (res.data.success) {
-                        this.products = res.data.products;
-                    } else{
-                        console.log(res);
-                    }
-                }).catch(err => {
-                    console.log(err);
-                })
-        },
-        getCart(){
-            const api = `${apiUrl}/api/${apiPath}/cart`;
-            axios.get(api)
-            .then(res=>{
-                if(res.data.success){
-                    this.cart = res.data.data;
-                } else{
-                    console.log(res);
-                }
-            }).catch(err=>{
-                consol.log(err);
-            })
+            apiUrl: "https://vue3-course-api.hexschool.io",
+            apiPath: "jimnycourse",
         }
     },
-    mounted() {
-        this.getProducts();
-        this.getCart();
+    components: {
+        loginModal
     },
+    mounted() {
+    },
+    methods: {
+        login(){
+            this.$refs.login.openModal();
+        },
+    }
 });
-
-
 app.mount('#app');
