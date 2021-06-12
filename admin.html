@@ -54,7 +54,7 @@
                     <h2 class="mr-4">課程列表</h2>
                     <button type="button" class="ml-5 btn btn-outline-dark" @click="openModal(true)"><i class="fas fa-plus mr-2 text-secondary"></i>新增課程</button>
                 </div>
-                <a href="#" class="text-dark"><i class="fas fa-sign-out-alt h2"></i></a>
+                <a href="#" class="text-dark" @click="logout"><i class="fas fa-sign-out-alt h2"></i></a>
             </div>
             <!-- 下方內容 -->
             <table class="table table-borderless table-hover">
@@ -89,7 +89,7 @@
         <!-- 刪除模組 -->
         <delete-modal :product="product" :api="api" @render="getProducts"></delete-modal>
         <!-- 新增/修改 -->
-        <add-edit-modal :product="product" :api="api"></add-edit-modal>
+        <add-edit-modal :product="product" :api="api" @render="getProducts"></add-edit-modal>
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.min.js'

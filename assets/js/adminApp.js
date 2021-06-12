@@ -65,6 +65,11 @@ const app = createApp({
             }
             productModal.show();
           },
+        // 登出
+        logout(){
+      
+            window.location = 'index.html';
+          }
     }
 });
 app.mount('#app');
