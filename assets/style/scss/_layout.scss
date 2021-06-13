@@ -1,20 +1,3 @@
-.borderRadius{
-    border:1px solid #fff;
-    border-radius: 50px;
-}
-// index icon
-.button .icon{
-    color:#fff;
-}
-.btn:hover .icon{
-    color:#000;
-    background: #fff;
-}
-.button:hover .icon{
-    color:#000;
-    background: #fff;
-}
-
 // 其他分頁的icon
 .borderRadiusIn{
     border:1px solid #000000;
@@ -30,4 +13,17 @@
 .buttonIn:hover .icon{
     color:#fff;
     background: #000;
+}
+
+// 物學案 就職 對象
+.magnifyText {
+    transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.magnifyText:hover {
+    transform: scale(1.25);
+}
+
+.magnifyText:active {
+    transform: scale(.8);
 }
