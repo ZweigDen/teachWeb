@@ -43,6 +43,7 @@ const app = createApp({
                     if (res.data.success) {
                         this.products = res.data.products;
                         this.pagination = res.data.pagination;
+                        console.log(this.pagination)
                     } else {
                         alert(res.data.message); // 帶入錯誤
                     }
