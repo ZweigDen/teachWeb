@@ -259,7 +259,7 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <template v-for="item in products">
                         <div class="col mb-3" v-if="item.category=='語文'">
-                            <div class="card h-100">
+                            <div class="card h-100 hoverShadow">
                                 <img :src="item.imageUrl" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h3 class="card-title">{{ item.title }}</h3>
@@ -287,7 +287,7 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <template v-for="item in products">
                         <div class="col mb-3" v-if="item.category=='數理'">
-                            <div class="card h-100">
+                            <div class="card h-100 hoverShadow">
                                 <img :src="item.imageUrl" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h3 class="card-title">{{ item.title }}</h3>
@@ -302,20 +302,23 @@
             </section>
             <section class="p-7">
                 <div class="mb-3 border-bottom border-dark">
-                    <p class="h1 d-flex text-dark align-items-center"><span class="pb-2"
-                            style="animation-delay: calc(1s * 0.1);" data-aos="animate__rotateInDownLeft"><i
-                                class="fas fa-seedling mr-1 bg-dark text-light h2 p-1 borderRadiusLeft"></i><i
-                                class="fas fa-cat mr-3 bg-dark text-light h2 p-1 borderRadiusRight"></i></span><span
-                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">人</span><span
-                            style="animation-delay: calc(1s * 0.3);" data-aos="animate__rotateInDownLeft">生</span><span
-                            style="animation-delay: calc(1s * 0.4);" data-aos="animate__rotateInDownLeft">類</span><span
-                            style="animation-delay: calc(1s * 0.5);" data-aos="animate__rotateInDownLeft"><i
-                                class="fas fa-exclamation ml-3"></i></span></p>
+                    <p class="h1 d-flex text-dark align-items-center">
+                        <span class="pb-2" style="animation-delay: calc(1s * 0.1);"
+                            data-aos="animate__rotateInDownLeft">
+                            <i class="fas fa-seedling mr-1 bg-dark text-light h2 p-1 borderRadiusLeft"></i>
+                            <i class="fas fa-cat mr-3 bg-dark text-light h2 p-1 borderRadiusRight"></i></span>
+                        <span style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">人</span>
+                        <span style="animation-delay: calc(1s * 0.3);" data-aos="animate__rotateInDownLeft">生</span>
+                        <span style="animation-delay: calc(1s * 0.4);" data-aos="animate__rotateInDownLeft">類</span>
+                        <span style="animation-delay: calc(1s * 0.5);" data-aos="animate__rotateInDownLeft">
+                            <i class="fas fa-exclamation ml-3"></i>
+                        </span>
+                    </p>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <template v-for="item in products">
                         <div class="col mb-3" v-if="item.category=='人生'">
-                            <div class="card h-100">
+                            <div class="card h-100 hoverShadow">
                                 <img :src="item.imageUrl" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h3 class="card-title">{{ item.title }}</h3>
