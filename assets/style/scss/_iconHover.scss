@@ -1,3 +1,43 @@
+.snapLeftBtn1 {
+    overflow: hidden;
+    border:1px solid #000;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.snapLeftBtn1::before {
+    content: '>';
+    position: absolute;
+    padding-left:5px;
+    color: #fff;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translateX(-101%);
+    background:hsl(0, 0%, 0%);
+    transition: transform .25s ease-in;
+}
+.icon:hover .snapLeftBtn1::before{
+    transform: translateX(0);
+}
+.snapLeftBtn1:hover::before {
+    transform: translateX(0);
+}
+
+.snapLeftBtn1 span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    transition: color 0.1s .15s ease-in;
+}
+.snapLeftBtn1:hover span {
+    color: hsl(222, 100%, 95%);
+    animation: animIconSpan 0.4s;
+}
+// 白
 .snapLeftBtn {
     overflow: hidden;
     border:1px solid #fff;
