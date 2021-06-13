@@ -30,7 +30,7 @@ export default {
             modal: '',
             admin: {
                 "username": "",
-                "password": ""
+                "password": "k485483UIO"
             }
         };
     },

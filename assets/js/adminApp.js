@@ -1,6 +1,7 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.esm-browser.js';
 import deleteModal from "./deleteModal.js";
 import addEditModal from "./addEditModal.js";
+import pageModal from "./paginationModal.js";
 
 let productModal = {}; // 定義接近全域變數
 let delModal;
@@ -21,6 +22,7 @@ const app = createApp({
     components: {
         deleteModal,
         addEditModal,
+        pageModal
     },
     mounted() {
         const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');

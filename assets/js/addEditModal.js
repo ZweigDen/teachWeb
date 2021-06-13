@@ -5,8 +5,8 @@ export default {
         <div class="modal-content border-0">
           <div class="modal-header bg-dark text-white">
             <h5 id="productModalLabel" class="modal-title">
-              <span >新增產品</span>
-              <span >編輯產品</span>
+              <span >新增課程</span>
+              <span >編輯課程</span>
             </h5>
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -62,7 +62,7 @@ export default {
   
                 <div class="row">
                   <div class="form-group col-md-6">
-                    <label for="category">分類</label>
+                    <label for="category">課程分類</label>
                     <input id="category" v-model="tempProduct.category" type="text" class="form-control"
                       placeholder="請輸入分類">
                   </div>
@@ -87,13 +87,13 @@ export default {
                 <hr>
   
                 <div class="form-group">
-                  <label for="description">產品描述</label>
+                  <label for="description">課程描述</label>
                   <textarea id="description" v-model="tempProduct.description" type="text" class="form-control"
-                    placeholder="請輸入產品描述">
+                    placeholder="請輸入課程描述">
                 </textarea>
                 </div>
                 <div class="form-group">
-                  <label for="content">說明內容</label>
+                  <label for="content">課程內容</label>
                   <textarea id="description" v-model="tempProduct.content" type="text" class="form-control"
                     placeholder="請輸入說明內容">
                 </textarea>
