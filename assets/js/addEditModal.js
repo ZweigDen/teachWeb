@@ -17,8 +17,8 @@ export default {
               <div class="col-sm-4">
                 <div class="form-group">
                   <label for="imageUrl">主要圖片</label>
-                  <input type="text" class="form-control" placeholder="請輸入圖片連結">
-                  <img class="img-fluid" >
+                  <input type="text" class="form-control" placeholder="請輸入圖片連結" v-model="tempProduct.imageUrl">
+                  <img class="img-fluid" :src="tempProduct.imageUrl">
                 </div>
                 <div class="mb-1">多圖新增</div>
                 <div v-if="Array.isArray(tempProduct.imagesUrl)">
@@ -56,27 +56,35 @@ export default {
               </div>
               <div class="col-sm-8">
                 <div class="form-group">
-                  <label for="title">標題</label>
+                  <label for="title">課程標題</label>
                   <input id="title" v-model="tempProduct.title" type="text" class="form-control" placeholder="請輸入標題">
                 </div>
   
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="category">課程分類</label>
-                    <input id="category" v-model="tempProduct.category" type="text" class="form-control"
-                      placeholder="請輸入分類">
+                    <select class="form-control" v-model="tempProduct.category">
+                        <option disabled selected>請選擇分類</option>
+                        <option>語文</option>
+                        <option>數理</option>
+                        <option>人生</option>
+                    </select>
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="price">單位</label>
-                    <input id="unit" v-model="tempProduct.unit" type="text" class="form-control" placeholder="請輸入單位">
+                    <label for="price">授課講師</label>
+                    <select class="form-control" v-model="tempProduct.unit">
+                        <option disabled selected>請選擇講師</option>
+                        <option>彭校長</option>
+                        <option>呼嚕貓</option>
+                    </select>
                   </div>
                 </div>
   
                 <div class="row">
                   <div class="form-group col-md-6">
-                    <label for="origin_price">原價</label>
-                    <input id="origin_price" v-model.number="tempProduct.origin_price" type="number" min="0"
-                      class="form-control" placeholder="請輸入原價">
+                    <label for="origin_price">課堂時數</label>
+                    <input id="origin_price" v-model.number="tempProduct.origin_price" type="number" min="1"
+                      class="form-control" placeholder="請輸入數字">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="price">售價</label>

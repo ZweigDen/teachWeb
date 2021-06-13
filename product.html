@@ -155,27 +155,7 @@
                                 </a>
                             </div>
                             <!-- Modal -->
-                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            ...
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Understood</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <login-modal ref="login" :api-url="apiUrl"></login-modal>
                         </div>
                         <div class="card border-0">
                             <div class="card-body">
@@ -246,6 +226,7 @@
             <!-- bg -->
             <section class="productHeader mb-7" style="background-image: url(assets/images/product-header.jpg)">
             </section>
+            <!-- 教育方針 -->
             <section class="text-center container mb-7">
                 <div class="row flex-column align-items-center">
                     <div class="col mb-3">
@@ -265,19 +246,83 @@
                 </div>
             </section>
             <!-- productList -->
-            <section class="mb-7 p-7">
-                <div class="card-columns">
-                    <div class="card border-0 cardShadow mx-2 mb-7" v-for="item in products" :key="item.id">
-                        <img :src=item.imageUrl class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ item.title }}</h5>
-                            <p class="card-text">${{ item.price }}</p>
-                            <p class="card-text">{{ item.description }}</p>
+            <section class="p-7">
+                <div class="mb-3 border-bottom border-dark">
+                    <p class="h1 d-flex text-dark"><span style="animation-delay: calc(1s * 0.2);"
+                            data-aos="animate__rotateInDownLeft"><i class="fas fa-language mr-3"></i></span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">語</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">文</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">類</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft"><i
+                                class="fas fa-exclamation ml-3"></i></span></p>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col mb-3" v-for="item in products">
+                        <div class="card h-100" v-if="item.category=='語文'">
+                            <img :src="item.imageUrl" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ item.title }}</h3>
+                                <p class="card-text">{{ item.description }}</p>
+                                <h5 class="card-text">${{ item.price }}</h5>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
                         </div>
-                        <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
                     </div>
                 </div>
             </section>
+            <section class="p-7">
+                <div class="mb-3 border-bottom border-dark">
+                    <p class="h1 d-flex text-dark align-items-center"><span class="pb-2"
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft"><i
+                                class="fas fa-cogs mr-1 bg-dark text-light h2 p-1 borderRadiusLeft"></i><i
+                                class="fas fa-flask mr-3 bg-dark text-light h2 p-1 borderRadiusRight"></i></span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">數</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">學</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">類</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft"><i
+                                class="fas fa-exclamation ml-3"></i></span></p>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col mb-3" v-for="item in products">
+                        <div class="card h-100" v-if="item.category=='數理'">
+                            <img :src="item.imageUrl" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ item.title }}</h3>
+                                <p class="card-text">{{ item.description }}</p>
+                                <h5 class="card-text">${{ item.price }}</h5>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="p-7">
+                <div class="mb-3 border-bottom border-dark">
+                    <p class="h1 d-flex text-dark align-items-center"><span class="pb-2"
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft"><i
+                                class="fab fa-xbox mr-1 bg-dark text-light h2 p-1 borderRadiusLeft"></i><i
+                                class="fas fa-cat mr-3 bg-dark text-light h2 p-1 borderRadiusRight"></i></span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">人</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">生</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">類</span><span
+                            style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft"><i
+                                class="fas fa-exclamation ml-3"></i></span></p>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col mb-3" v-for="item in products">
+                        <div class="card h-100" v-if="item.category=='人生'">
+                            <img :src="item.imageUrl" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ item.title }}</h3>
+                                <p class="card-text">{{ item.description }}</p>
+                                <h5 class="card-text">${{ item.price }}</h5>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 查看購物車按鈕 -->
             <section class="fixed-bottom p-3 d-flex justify-content-end">
                 <a href="#" class="text-dark"><i class="fas fa-shopping-cart h1"></i></a>
             </section>
