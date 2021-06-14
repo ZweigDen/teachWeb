@@ -1,14 +1,14 @@
 export default {
   template: `<div class="modal fade" id="productModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true" ref="modal">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
       <div class="modal-content border-0">
         <div class="modal-header bg-dark text-white">
-          <h5 class="modal-title" id="exampleModalLabel">
+          <h2 class="modal-title" id="exampleModalLabel" data-aos="animate__bounceInRight" data-aos-offset="10">
             <span>{{ tempProduct.title }}</span>
-          </h5>
+          </h2>
           <button type="button" class="btn-close"
-                  data-bs-dismiss="modal" aria-label="Close">x</button>
+                  data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-window-close"></i></button>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -27,7 +27,7 @@ export default {
                 <div class="input-group">
                   <input type="number" class="form-control"
                         v-model.number="qty" min="1">
-                  <button type="button" class="btn btn-primary"
+                  <button type="button" class="btn btn-secondary"
                   @click="$emit('add-cart', tempProduct.id, qty)"
                           >加入購物車</button>
                 </div>
