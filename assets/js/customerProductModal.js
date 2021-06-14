@@ -1,65 +1,97 @@
 export default {
-    template: `<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true" ref="modal">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="modal-content border-0">
-        <div class="modal-header bg-dark text-white">
-          <h5 class="modal-title" id="exampleModalLabel">
-            <span>{{ tempProduct.title }}</span>
-          </h5>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-sm-6">
-              <img class="img-fluid" :src="tempProduct.imageUrl" alt="">
-            </div>
-            <div class="col-sm-6">
-              <span class="badge bg-primary rounded-pill">{{ tempProduct.category }}</span>
-              <p>商品描述：{{ tempProduct.description }}</p>
-              <p>商品內容：{{ tempProduct.content }}</p>
-              <div class="h5" v-if="!tempProduct.price">{{ tempProduct.origin_price }} 元</div>
-              <del class="h6" v-if="tempProduct.price">原價 {{ tempProduct.origin_price }} 元</del>
-              <div class="h5" v-if="tempProduct.price">現在只要 {{ tempProduct.price }} 元</div>
-              <div>
-                <div class="input-group">
-                  <input type="number" class="form-control"
-                        v-model.number="qty" min="1">
-                  <button type="button" class="btn btn-primary"
-                  @click="$emit('add-cart', tempProduct.id, qty)"
-                          >加入購物車</button>
-                </div>
-              </div>
-            </div>
-            <!-- col-sm-6 end -->
-          </div>
-        </div>
-      </div>
+    template: `<section class="p-7" id="language">
+    <div class="mb-3 border-bottom border-dark">
+        <p class="h1 d-flex text-dark"><span style="animation-delay: calc(1s * 0.1);"
+                data-aos="animate__rotateInDownLeft"><i class="fas fa-language mr-3"></i></span><span
+                style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">語</span><span
+                style="animation-delay: calc(1s * 0.3);" data-aos="animate__rotateInDownLeft">文</span><span
+                style="animation-delay: calc(1s * 0.4);" data-aos="animate__rotateInDownLeft">類</span><span
+                style="animation-delay: calc(1s * 0.5);" data-aos="animate__rotateInDownLeft"><i
+                    class="fas fa-exclamation ml-3"></i></span></p>
     </div>
-  </div>`,
-    props: ['product'],
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <template v-for="item in products">
+            <div class="col mb-3" v-if="item.category=='語文'">
+                <div class="card h-100 hoverShadow">
+                    <img :src="item.imageUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <p class="card-text">講師：{{ item.unit }}</p>
+                        <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
+                    </div>
+                    <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
+                </div>
+            </div>
+        </template>
+    </div>
+</section>
+<section class="p-7" id="math">
+    <div class="mb-3 border-bottom border-dark">
+        <p class="h1 d-flex text-dark align-items-center"><span class="pb-2"
+                style="animation-delay: calc(1s * 0.1);" data-aos="animate__rotateInDownLeft"><i
+                    class="fas fa-cogs mr-1 bg-dark text-light h2 p-1 borderRadiusLeft"></i><i
+                    class="fas fa-flask mr-3 bg-dark text-light h2 p-1 borderRadiusRight"></i></span><span
+                style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">數</span><span
+                style="animation-delay: calc(1s * 0.3);" data-aos="animate__rotateInDownLeft">理</span><span
+                style="animation-delay: calc(1s * 0.4);" data-aos="animate__rotateInDownLeft">類</span><span
+                style="animation-delay: calc(1s * 0.5);" data-aos="animate__rotateInDownLeft"><i
+                    class="fas fa-exclamation ml-3"></i></span></p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <template v-for="item in products">
+            <div class="col mb-3" v-if="item.category=='數理'">
+                <div class="card h-100 hoverShadow">
+                    <img :src="item.imageUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <p class="card-text">講師：{{ item.unit }}</p>
+                        <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
+                    </div>
+                    <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
+                </div>
+            </div>
+        </template>
+    </div>
+</section>
+<section class="p-7" id="life">
+    <div class="mb-3 border-bottom border-dark">
+        <p class="h1 d-flex text-dark align-items-center">
+            <span class="pb-2" style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">
+                <i class="fas fa-seedling mr-1 bg-dark text-light h2 p-1 borderRadiusLeft"></i>
+                <i class="fas fa-cat mr-3 bg-dark text-light h2 p-1 borderRadiusRight"></i></span>
+            <span style="animation-delay: calc(1s * 0.2);" data-aos="animate__rotateInDownLeft">人</span>
+            <span style="animation-delay: calc(1s * 0.3);" data-aos="animate__rotateInDownLeft">生</span>
+            <span style="animation-delay: calc(1s * 0.4);" data-aos="animate__rotateInDownLeft">類</span>
+            <span style="animation-delay: calc(1s * 0.5);" data-aos="animate__rotateInDownLeft">
+                <i class="fas fa-exclamation ml-3"></i>
+            </span>
+        </p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <template v-for="item in products">
+            <div class="col mb-3" v-if="item.category=='人生'">
+                <div class="card h-100 hoverShadow">
+                    <img :src="item.imageUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <p class="card-text">講師：{{ item.unit }}</p>
+                        <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
+                    </div>
+                    <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
+                </div>
+            </div>
+        </template>
+    </div>
+</section>`,
+    props: ['products'],
     data() {
         return {
-            status: {},
-            tempProduct: {},
-            modal: '',
-            qty: 1,
-
         };
     },
     watch: {
-      product() {
-        this.tempProduct = this.product;
-      }
     },
     mounted() {
-        this.modal = new bootstrap.Modal(this.$refs.modal);
     },
     methods: {
-        openModal() {
-            this.modal.show();
-        },
-        hideModal() {
-            this.modal.hide();
-        },
     }
 }
