@@ -15,13 +15,14 @@ export default {
             <div class="col-sm-6">
               <img class="img-fluid" :src="tempProduct.imageUrl" alt="">
             </div>
-            <div class="col-sm-6">
-              <span class="badge bg-primary rounded-pill">{{ tempProduct.category }}</span>
-              <p>商品描述：{{ tempProduct.description }}</p>
-              <p>商品內容：{{ tempProduct.content }}</p>
-              <div class="h5" v-if="!tempProduct.price">{{ tempProduct.origin_price }} 元</div>
-              <del class="h6" v-if="tempProduct.price">原價 {{ tempProduct.origin_price }} 元</del>
-              <div class="h5" v-if="tempProduct.price">現在只要 {{ tempProduct.price }} 元</div>
+            <div class="col-sm-6 d-flex flex-column justify-content-between">
+              <div>
+              <span class="badge bg-primary rounded-pill mb-3">{{ tempProduct.category }}</span>
+              <p class="h3 mb-3">商品描述：{{ tempProduct.description }}</p>
+              <p class="h4">商品內容：{{ tempProduct.content }}</p>
+              <div class="h5">價格＄{{ tempProduct.price }} 元</div>
+              <div class="h5">課堂時數{{ tempProduct.origin_price }} 小時</div>
+              </div>
               <div>
                 <div class="input-group">
                   <input type="number" class="form-control"
