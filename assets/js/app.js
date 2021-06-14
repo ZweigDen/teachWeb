@@ -1,7 +1,7 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.esm-browser.js';
-import loginModal from './loginModal.js';
-import customerProduct from './customerProductModal.js';
-import showProduct from './showProductModal.js';
+import loginModal from './modal/loginModal.js';
+import customerProduct from './modal/customerProductModal.js';
+import showProduct from './modal/showProductModal.js';
 
 
 const app = createApp({

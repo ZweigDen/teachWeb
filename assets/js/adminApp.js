@@ -1,7 +1,7 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.esm-browser.js';
-import deleteModal from "./deleteModal.js";
-import addEditModal from "./addEditModal.js";
-import pageModal from "./paginationModal.js";
+import deleteModal from "./modal/deleteModal.js";
+import addEditModal from "./modal/addEditModal.js";
+import pageModal from "./modal/paginationModal.js";
 
 let productModal = {}; // 定義接近全域變數
 let delModal;
