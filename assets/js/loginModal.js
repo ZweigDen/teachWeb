@@ -20,7 +20,7 @@ export default {
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary"
                     data-bs-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-outline-dark" @click="login">登入</button>
+                <button type="button" class="btn btn-outline-dark" @click="myLogin">登入</button>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@ export default {
             modal: '',
             admin: {
                 "username": "",
-                "password": "k485483UIO"
+                "password": ""
             }
         };
     },
@@ -39,7 +39,7 @@ export default {
         this.modal = new bootstrap.Modal(this.$refs.modal);
     },
     methods: {
-        login() {
+        myLogin() {
             const api = `${this.apiUrl}/admin/signin`;
             axios.post(api, this.admin)
             .then(res=>{

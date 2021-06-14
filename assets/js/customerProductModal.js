@@ -10,14 +10,16 @@ export default {
                     class="fas fa-exclamation ml-3"></i></span></p>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <template v-for="item in products">
+        <template v-for="item in products" :key="item.id">
             <div class="col mb-3" v-if="item.category=='語文'">
                 <div class="card h-100 hoverShadow">
-                    <img :src="item.imageUrl" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h3 class="card-title">{{ item.title }}</h3>
-                        <p class="card-text">講師：{{ item.unit }}</p>
-                        <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
+                    <div class="border-0 p-0 m-0 btn" @click="$emit('show_product', item)">
+                        <img :src="item.imageUrl" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ item.title }}</h3>
+                            <p class="card-text">講師：{{ item.unit }}</p>
+                            <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
+                        </div>
                     </div>
                     <button type="button" class="btn btn-outline-dark d-block w-100">加入購物車</button>
                 </div>
@@ -38,7 +40,7 @@ export default {
                     class="fas fa-exclamation ml-3"></i></span></p>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <template v-for="item in products">
+        <template v-for="item in products" :key="item.id">
             <div class="col mb-3" v-if="item.category=='數理'">
                 <div class="card h-100 hoverShadow">
                     <img :src="item.imageUrl" class="card-img-top" alt="...">
@@ -68,7 +70,7 @@ export default {
         </p>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <template v-for="item in products">
+        <template v-for="item in products" :key="item.id">
             <div class="col mb-3" v-if="item.category=='人生'">
                 <div class="card h-100 hoverShadow">
                     <img :src="item.imageUrl" class="card-img-top" alt="...">
