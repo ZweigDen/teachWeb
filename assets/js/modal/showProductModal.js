@@ -24,10 +24,11 @@ export default {
               <div class="h5">課堂時數{{ tempProduct.origin_price }} 小時</div>
               </div>
               <div>
-                <div class="input-group">
+                <div class="input-group d-flex justify-content-center">
                   <input type="number" class="form-control"
-                        v-model.number="qty" min="1">
-                  <button type="button" class="btn btn-secondary"
+                        v-model.number="qty" min="1" style="max-width:100px">
+                  <div class="spinner-border d-none ml-4" role="status" :class="{ 'd-block': status == tempProduct.id }"></div>
+                  <button type="button" class="btn btn-secondary" :class="{ 'd-none': status == tempProduct.id }"
                   @click="$emit('add-cart', tempProduct.id, qty)"
                           >加入購物車</button>
                 </div>
@@ -39,7 +40,7 @@ export default {
       </div>
     </div>
   </div>`,
-  props: ['product'],
+  props: ['product','loading'],
   data() {
     return {
       status: {},
@@ -52,6 +53,9 @@ export default {
   watch: {
     product() {
       this.tempProduct = this.product;
+    },
+    loading(){
+      this.status = this.loading;
     }
   },
   mounted() {

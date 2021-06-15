@@ -9,6 +9,8 @@ import checkout from './modal/checkoutModal.js'; //付款模型
 const app = createApp({
     data() {
         return {
+            // 讀取效果
+            loadingStatus: "",
             apiUrl: "https://vue3-course-api.hexschool.io",
             apiPath: "jimnycourse",
             products: [],
@@ -53,22 +55,25 @@ const app = createApp({
                     }
                 })
         },
-        addCart(id, qty = 1){
+        addCart(id, qty = 1) {
+            this.loadingStatus = id;
             const cart = {
                 product_id: id,
                 qty
-              };
+            };
             const api = `${this.apiUrl}/api/${this.apiPath}/cart`;
-            axios.post(api, {data:cart})
-            .then(res => {
-                if(res.data.success){
-                    // 改購物車icon
-                } else {
-                    console.log(res)
-                }
-            }).catch(err => {
-                console.log(err)
-            })
+            axios.post(api, { data: cart })
+                .then(res => {
+                    if (res.data.success) {
+                        // 改購物車icon
+                        this.loadingStatus = '';
+                        this.getCart();
+                    } else {
+                        console.log(res)
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
         },
         // 產品明細
         showProduct(item) {
@@ -86,62 +91,50 @@ const app = createApp({
                 })
         },
         // 取得購物車列表
-        getCart(){
+        getCart() {
             const api = `${this.apiUrl}/api/${this.apiPath}/cart`;
             axios.get(api)
-            .then(res=>{
-                if(res.data.success){
-                    this.carts = res.data.data;
-                } else {
-                    console.log(res)
-                }
-            }).catch(err=>{
-                console.log(err)
-            })
+                .then(res => {
+                    if (res.data.success) {
+                        this.carts = res.data.data;
+                    } else {
+                        console.log(res)
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
         },
         // 購物車
-        openCart(){
-            const api = `${this.apiUrl}/api/${this.apiPath}/cart`;
-            axios.get(api)
-            .then(res=>{
-                if(res.data.success){
-                    this.carts = res.data.data;
-                    this.$refs.cart.openModal();
-                    console.log(this.carts)
-                } else {
-                    console.log(res)
-                }
-            }).catch(err=>{
-                console.log(err)
-            })
+        openCart() {
+            this.$refs.cart.openModal();
         },
         // 身除單品項
-        deleteProduct(id){
+        deleteProduct(id) {
             const api = `${this.apiUrl}/api/${this.apiPath}/cart/${id}`;
             axios.delete(api)
-            .then(res=>{
-                if(res.data.success){
-                    this.getCart();
-                } else{
-                    console.log(res)
-                }
-            }).catch(err=>{
-                console.log(err)
-            })
+                .then(res => {
+                    if (res.data.success) {
+                        this.getCart();
+                    } else {
+                        console.log(res)
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
         },
         // 刪除所有購物車
-        deleteAllCart(){
+        deleteAllCart() {
             const api = `${this.apiUrl}/api/${this.apiPath}/carts`;
             axios.delete(api)
-            .then(res=>{
-                if(res.data.success){
-                    this.getCart();
-                } else {
-                    console.log(res);
-                }
-            }).catch(err=>{
-                console.log(err)
-            })
+                .then(res => {
+                    if (res.data.success) {
+                        this.getCart();
+                    } else {
+                        console.log(res);
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
         }
     }
 });

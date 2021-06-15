@@ -21,7 +21,10 @@ export default {
                             <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-outline-dark d-block w-100" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border d-none" role="status" :class="{ 'd-block': status == item.id }"></div>
+                        <button type="button" class="btn btn-outline-dark w-100" :class="{ 'd-none': status == item.id }" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
+                    </div>
                 </div>
             </div>
         </template>
@@ -43,15 +46,18 @@ export default {
         <template v-for="item in tempProduct" :key="item.id">
             <div class="col mb-3" v-if="item.category=='數理'">
                 <div class="card h-100 hoverShadow">
-                <div class="border-0 p-0 m-0 btn" @click="$emit('show_product', item)">
-                <img :src="item.imageUrl" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h3 class="card-title">{{ item.title }}</h3>
-                    <p class="card-text">講師：{{ item.unit }}</p>
-                    <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
-                </div>
-            </div>
-                    <button type="button" class="btn btn-outline-dark d-block w-100" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
+                    <div class="border-0 p-0 m-0 btn" @click="$emit('show_product', item)">
+                        <img :src="item.imageUrl" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <p class="card-text">講師：{{ item.unit }}</p>
+                        <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border d-none" role="status" :class="{ 'd-block': status == item.id }"></div>
+                        <button type="button" class="btn btn-outline-dark w-100" :class="{ 'd-none': status == item.id }" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
+                    </div>
                 </div>
             </div>
         </template>
@@ -83,22 +89,29 @@ export default {
                             <h5 class="card-text">價格$ {{ item.price }}｜課堂時數 {{ item.origin_price }} 小時</h5>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-outline-dark d-block w-100" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border d-none" role="status" :class="{ 'd-block': status == item.id }"></div>
+                        <button type="button" class="btn btn-outline-dark w-100" :class="{ 'd-none': status == item.id }" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
+                    </div>
                 </div>
             </div>
         </template>
     </div>
 </section>`,
-    props: ['products'],
+    props: ['products', 'loading'],
     data() {
         return {
-            tempProduct:{},
-            qty:1
+            tempProduct: {},
+            qty: 1,
+            status: {}
         };
     },
     watch: {
-        products(){
+        products() {
             this.tempProduct = this.products;
+        },
+        loading() {
+            this.status = this.loading
         }
     },
     mounted() {

@@ -36,7 +36,7 @@
                             <h4 class="px-1 snapLeftBtn1">></h4>
                             <h4 class="ml-1">學校師資</h4>
                         </a>
-                        <a href="#" class="d-flex align-items-center text-decoration-none text-dark icon  mx-2">
+                        <a href="product.html" class="d-flex align-items-center text-decoration-none text-dark icon  mx-2">
                             <h4 class="px-1 snapLeftBtn1">></h4>
                             <h4 class="ml-1">購買課程</h4>
                         </a>
@@ -242,9 +242,9 @@
                 </div>
             </section>
             <!-- productList -->
-            <customer-product :products="products" @show_product="showProduct" @add-cart="addCart"></customer-product>
+            <customer-product :products="products" :loading="loadingStatus" @show_product="showProduct" @add-cart="addCart"></customer-product>
             <!-- 產品明細 -->
-            <show-product :product="product" ref="showModal" @add-cart="addCart"></show-product>
+            <show-product :product="product" :loading="loadingStatus" ref="showModal" @add-cart="addCart"></show-product>
             <!-- 購物車按鈕 -->
             <section class="fixedBottomRight p-3" data-aos="animate__bounceInLeft" data-aos-offset="40">
                 <a class="text-dark btn" @click="openCart"><i class="fas fa-shopping-cart h1 magnifyText"></i></a>
