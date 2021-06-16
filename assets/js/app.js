@@ -14,15 +14,9 @@ const app = Vue.createApp({
             apiPath: "jimnycourse",
             products: [],
             product: {},
-            user:{
-                name:"",
-                email:"",
-                tel:"",
-                address:"",
-            },
             // 購物車列表
             carts: {},
-
+            orderID:"",
         }
     },
     components: {
@@ -131,7 +125,7 @@ const app = Vue.createApp({
                 }).catch(err => {
                     console.log(err)
                 })
-        }
+        },
     }
 });
 

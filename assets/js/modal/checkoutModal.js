@@ -54,52 +54,55 @@ export default {
 </div>
 <div class="d-flex flex-column align-items-center">
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-primary">信用卡刷卡</button>
+                                <button type="submit" class="btn btn-outline-primary" @click="postOrder(1)">信用卡刷卡</button>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-secondary">線上轉帳</button>
+                                <button type="submit" class="btn btn-outline-secondary" @click="postOrder(21)">線上轉帳</button>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-success">超商帳單代收</button>
+                                <button type="submit" class="btn btn-outline-success" @click="postOrder(3)">超商帳單代收</button>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-danger">7-11 ibon</button>
+                                <button type="submit" class="btn btn-outline-danger" @click="postOrder(4)">7-11 ibon</button>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-warning">FamiPort</button>
+                                <button type="submit" class="btn btn-outline-warning" @click="postOrder(6)">FamiPort</button>
                             </div>
                         </div>
 </v-form>`,
     props: ['product'],
     data() {
         return {
-            orderData:"",
             apiUrl: "https://vue3-course-api.hexschool.io",
             apiPath: "jimnycourse",
+            // 表單資訊
             form: {
-                user: {
-                    "name": "",
-                    "email": "",
-                    "tel": "",
-                    "address": ""
+                "user": {
+                    "name": "1232222",
+                    "email": "123@ya.com",
+                    "tel": "0987654321",
+                    "address": "defrgthgrfe",
                 },
             },
             tempProduct: {},
             // 測試
-            // payment: {
-            //     url: "https://ssl.smse.com.tw/ezpos_test/mtmk_utf.asp",
-            //     rvg2c: "1",
-            //     dcvc: "107",
-            //     od_sob: "123456",
-            //     invoice_name: "訊航科技股份有限公司",
-            //     invoice_num: "80129529",
-            //     roturl: "http://172.20.10.10:5000/test"
-            // }
+            payment: {
+                url: "https://ssl.smse.com.tw/ezpos_test/mtmk_utf.asp",
+                rvg2c: "1",
+                dcvc: "107",
+                od_sob: "123456",
+                invoice_name: "訊航科技股份有限公司",
+                invoice_num: "80129529",
+                roturl: "http://172.20.10.10:5000/test"
+            }
         }
     },
     watch: {
         product() {
             this.tempProduct = this.product;
+        },
+        form() {
+            this.tempForm = this.form;
         }
     },
     methods: {
@@ -107,27 +110,31 @@ export default {
             const phoneNumber = /^(09)[0-9]{8}$/
             return phoneNumber.test(value) ? true : '需要正確的手機號碼'
         },
+        // 創建訂單
         createOrder() {
-            // 測試用
-            // const url = `${this.payment.url}?Rvg2c=${this.payment.rvg2c}&Dcvc=${this.payment.dcvc}
-            // &Od_sob=${this.payment.od_sob}&Amount=${this.tempProduct.total}&Pur_name=${this.form.user.name}
-            // &Tel_number=037376006&Mobile_number=${this.form.user.phone}&Address=${this.form.user.address}
-            // &Email=${this.form.user.email}&Invoice_name=${this.payment.invoice_name}&Invoice_num=${this.payment.invoice_num}&Remark=備註&Roturl=${this.payment.roturl}&Pay_zg=2`;
-            // axios.post(url)
-            // .then(res=>{
-            //     console.log(res);
-            // });
-            // window.location = window.location.href = url;
-            //建立訂單
             const order = this.form;
             const api = `${this.apiUrl}/api/${this.apiPath}/order`;
-            axios.post(api, {data:order})
-            .then(res=>{
-                if(res.data.success){
-                    console.log(res);
-                    this.orderData = res.data;
-                }
-            })
+            axios.post(api, { data: order })
+                .then(res => {
+                    if (res.data.success) {
+                        console.log(res);
+                        this.orderData = res.data;
+                        
+                    }
+                })
         },
+        // 測試付款
+        postOrder(pay){
+            //測試用
+            const url = `${this.payment.url}?Rvg2c=${this.payment.rvg2c}&Dcvc=${this.payment.dcvc}
+            &Od_sob=${this.payment.od_sob}&Amount=${this.tempProduct.total}&Pur_name=${this.form.user.name}
+            &Tel_number=037376006&Mobile_number=${this.form.user.phone}&Address=${this.form.user.address}
+            &Email=${this.form.user.email}&Invoice_name=${this.payment.invoice_name}&Invoice_num=${this.payment.invoice_num}&Remark=備註&Roturl=${this.payment.roturl}&Pay_zg=${pay}`;
+            axios.post(url)
+            .then(res=>{
+                console.log(res);
+            });
+            window.location = window.location.href = url;
+        }
     }
 }
