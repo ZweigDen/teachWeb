@@ -22,7 +22,7 @@ export default {
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <div class="spinner-border d-none" role="status" :class="{ 'd-block': status == item.id }"></div>
+                        <div class="spinner-border d-none mb-1" role="status" :class="{ 'd-block': status == item.id }"></div>
                         <button type="button" class="btn btn-outline-dark w-100" :class="{ 'd-none': status == item.id }" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
                     </div>
                 </div>
@@ -55,7 +55,7 @@ export default {
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <div class="spinner-border d-none" role="status" :class="{ 'd-block': status == item.id }"></div>
+                        <div class="spinner-border d-none mb-1" role="status" :class="{ 'd-block': status == item.id }"></div>
                         <button type="button" class="btn btn-outline-dark w-100" :class="{ 'd-none': status == item.id }" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
                     </div>
                 </div>
@@ -90,7 +90,7 @@ export default {
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <div class="spinner-border d-none" role="status" :class="{ 'd-block': status == item.id }"></div>
+                        <div class="spinner-border d-none mb-1" role="status" :class="{ 'd-block': status == item.id }"></div>
                         <button type="button" class="btn btn-outline-dark w-100" :class="{ 'd-none': status == item.id }" @click="$emit('add-cart', item.id, qty)">加入購物車</button>
                     </div>
                 </div>

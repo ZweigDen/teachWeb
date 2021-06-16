@@ -78,10 +78,10 @@ export default {
             // 表單資訊
             form: {
                 "user": {
-                    "name": "1232222",
-                    "email": "123@ya.com",
-                    "tel": "0987654321",
-                    "address": "defrgthgrfe",
+                    "name": "",
+                    "email": "",
+                    "tel": "",
+                    "address": "",
                 },
             },
             tempProduct: {},
