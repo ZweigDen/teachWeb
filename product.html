@@ -248,7 +248,7 @@
             <section class="fixedBottomRight p-3" data-aos="animate__bounceInLeft" data-aos-offset="40">
                 <a class="text-dark btn" @click="openCart"><i class="fas fa-shopping-cart h1 magnifyText"></i></a>
             </section>
-            <cart-modal ref="cart" :carts="carts" @delete-all="deleteAllCart" @delete-product="deleteProduct"></cart-modal>
+            <cart-modal ref="cart" :carts="carts" :loading="loadingStatus" @delete-all="deleteAllCart" @delete-product="deleteProduct"></cart-modal>
         </main>
         <!-- footer -->
         <footer class="border-top">

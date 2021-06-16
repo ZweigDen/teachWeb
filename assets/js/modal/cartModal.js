@@ -33,16 +33,21 @@ export default {
                           <td>{{ item.product.price }}</td>
                           <td>{{ item.qty }}</td>
                           <td>{{ item.total }}</td>
-                          <td><button type="button" class="btn btn-outline-danger" @click="$emit('delete-product', item.id)">刪除</button>
+                          <td>
+                            <div class="d-flex justify-content-center">
+                                <div class="spinner-grow text-danger d-none" role="status" :class="{ 'd-block': status == item.id }"></div>
+                                <button type="button" class="btn btn-outline-danger" :class="{ 'd-none': status == item.id }" @click="$emit('delete-product', item.id)">刪除</button>
+                            </div>
                           </td>
                       </tr>
                   </template>
               </tbody>
           </table>
-          <div class="d-flex justify-content-between align-items-center">
-          <button type="button" class="btn btn-danger" @click="$emit('delete-all')">移除所有購物車</button>
-            總價格＄{{ this.tempProduct.total }}
-          </div>
+          <div class="d-flex justify-content-between">
+                                <div class="spinner-grow text-danger d-none" role="status" :class="{ 'd-block': status == 'allDelete' }"></div>
+                                <button type="button" class="btn btn-danger" :class="{ 'd-none': status == 'allDelete' }" @click="$emit('delete-all')">移除所有購物車</button>
+                                    總價格＄{{ this.tempProduct.total }}
+                            </div>
       </div>
           </div>
           <div class="modal-footer">
@@ -52,16 +57,20 @@ export default {
         </div>
       </div>
     </div>`,
-    props: ['carts'],
+    props: ['carts', 'loading'],
     data() {
         return {
             modal: '',
             tempProduct: {},
+            status: {}
         }
     },
     watch: {
         carts() {
             this.tempProduct = this.carts;
+        },
+        loading() {
+            this.status = this.loading;
         }
     },
     mounted() {

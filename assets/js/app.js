@@ -100,10 +100,12 @@ const app = Vue.createApp({
         },
         // 身除單品項
         deleteProduct(id) {
+            this.loadingStatus = id;
             const api = `${this.apiUrl}/api/${this.apiPath}/cart/${id}`;
             axios.delete(api)
                 .then(res => {
                     if (res.data.success) {
+                        this.loadingStatus = '';
                         this.getCart();
                     } else {
                         console.log(res)
@@ -114,11 +116,13 @@ const app = Vue.createApp({
         },
         // 刪除所有購物車
         deleteAllCart() {
+            this.loadingStatus = 'allDelete';
             const api = `${this.apiUrl}/api/${this.apiPath}/carts`;
             axios.delete(api)
                 .then(res => {
                     if (res.data.success) {
                         this.getCart();
+                        this.loadingStatus = '';
                     } else {
                         console.log(res);
                     }
