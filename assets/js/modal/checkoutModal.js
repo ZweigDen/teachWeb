@@ -1,75 +1,88 @@
 export default {
-    template: `<div class="px-7">
-    <table class="table">
-        <thead>
-            <tr>
-                <th width="90">名稱</th>
-                <th width="60">售價</th>
-                <th width="60">數量</th>
-                <th width="60">總價</th>
-            </tr>
-        </thead>
-        <tbody>
-            <template v-for="item in tempProduct.carts">
+    template: `
+    <div class="px-7">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>{{ item.product.title }}</td>
-                    <td>{{ item.product.price }}</td>
-                    <td>{{ item.qty }}</td>
-                    <td>{{ item.total }}</td>
+                    <th width="90">名稱</th>
+                    <th width="60">售價</th>
+                    <th width="60">數量</th>
+                    <th width="60">總價</th>
                 </tr>
-            </template>
-        </tbody>
-    </table>
-    <div class="text-right mb-8 h3">總價格＄{{ this.tempProduct.total }}元</div>
-</div>
-<v-form v-slot="{ errors }" @submit="createOrder" class="container">
-<div class="row mb-4">
-    <div class="mb-3 col-6">
-        <label for="name">姓名</label>
-        <v-field id="name" name="姓名" type="text" class="form-control"
-        :class="{ 'is-invalid': errors['姓名'] }" placeholder="請輸入姓名"
-        rules="required" v-model="form.user.name"></v-field>
-        <error-message name="姓名" class="invalid-feedback"></error-message>
+            </thead>
+            <tbody>
+                <template v-for="item in tempProduct.carts">
+                    <tr>
+                        <td>{{ item.product.title }}</td>
+                        <td>{{ item.product.price }}</td>
+                        <td>{{ item.qty }}</td>
+                        <td>{{ item.total }}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <div class="text-right mb-8 h3">總價格＄{{ this.tempProduct.total }}元</div>
     </div>
-    <div class="mb-3 col-6">
-        <label for="email">E-mail</label>
-        <v-field id="email" name="email" type="email" class="form-control"
-        :class="{ 'is-invalid': errors['email'] }" placeholder="請輸入 Email"
-        rules="email|required" v-model="form.user.email"></v-field>
-        <error-message name="email" class="invalid-feedback"></error-message>
+
+    <v-form v-slot="{ errors }" @submit="createOrder" class="container">
+        <div class="row mb-4">
+            <div class="mb-3 col-6">
+                <label for="name">姓名</label>
+                <v-field id="name" name="姓名" type="text" class="form-control"
+                    :class="{ 'is-invalid': errors['姓名'] }" placeholder="請輸入姓名"
+                    rules="required" v-model="form.user.name"></v-field>
+                <error-message name="姓名" class="invalid-feedback"></error-message>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="email">E-mail</label>
+                <v-field id="email" name="email" type="email" class="form-control"
+                    :class="{ 'is-invalid': errors['email'] }" placeholder="請輸入 Email"
+                    rules="email|required" v-model="form.user.email"></v-field>
+                <error-message name="email" class="invalid-feedback"></error-message>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="address" class="form-label">電話</label>
+                <v-field id="address" name="電話" type="text" class="form-control" :class="{ 'is-invalid': errors['電話'] }"
+                    placeholder="請輸入電話" :rules="isPhone" v-model="form.user.tel"></v-field>
+                <error-message name="電話" class="invalid-feedback"></error-message>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="address">地址</label>
+                <v-field id="address" name="地址" type="text" class="form-control"
+                    :class="{ 'is-invalid': errors['地址'] }" placeholder="請輸入地址"
+                    rules="required" v-model="form.user.address"></v-field>
+                <error-message name="地址" class="invalid-feedback"></error-message>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center"><button type="submit" class="btn btn-dark mb-4">付款去～</button></div>
+    </v-form>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column align-items-center">
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-primary" @click="postOrder(1)">信用卡刷卡</button>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-secondary" @click="postOrder(21)">線上轉帳</button>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-success" @click="postOrder(3)">超商帳單代收</button>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-danger" @click="postOrder(4)">7-11 ibon</button>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-warning" @click="postOrder(6)">FamiPort</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mb-3 col-6">
-        <label for="address" class="form-label">電話</label>
-        <v-field id="address" name="電話" type="text" class="form-control" :class="{ 'is-invalid': errors['電話'] }"
-           placeholder="請輸入電話" :rules="isPhone" v-model="form.user.tel"></v-field>
-        <error-message name="電話" class="invalid-feedback"></error-message>
-    </div>
-    <div class="mb-3 col-6">
-        <label for="address">地址</label>
-        <v-field id="address" name="地址" type="text" class="form-control"
-        :class="{ 'is-invalid': errors['地址'] }" placeholder="請輸入地址"
-        rules="required" v-model="form.user.address"></v-field>
-        <error-message name="地址" class="invalid-feedback"></error-message>
-    </div>
-</div>
-<div class="d-flex flex-column align-items-center">
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-primary" @click="postOrder(1)">信用卡刷卡</button>
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-secondary" @click="postOrder(21)">線上轉帳</button>
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-success" @click="postOrder(3)">超商帳單代收</button>
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-danger" @click="postOrder(4)">7-11 ibon</button>
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-outline-warning" @click="postOrder(6)">FamiPort</button>
-                            </div>
-                        </div>
-</v-form>`,
+`,
     props: ['product'],
     data() {
         return {
@@ -78,12 +91,13 @@ export default {
             // 表單資訊
             form: {
                 "user": {
-                    "name": "",
-                    "email": "",
-                    "tel": "",
-                    "address": "",
+                    "name": "123",
+                    "email": "123@ic.com",
+                    "tel": "0987654321",
+                    "address": "kjfdfghj",
                 },
             },
+            orderData:{},
             tempProduct: {},
             // 測試
             payment: {
@@ -93,7 +107,7 @@ export default {
                 od_sob: "123456",
                 invoice_name: "訊航科技股份有限公司",
                 invoice_num: "80129529",
-                roturl: "http://172.20.10.10:5000/test"
+                roturl: "http://172.0.0.1:5000/test"
             }
         }
     },
@@ -119,8 +133,11 @@ export default {
                     if (res.data.success) {
                         console.log(res);
                         this.orderData = res.data;
-                        
+                    } else {
+                        alert(res.message)
                     }
+                }).catch(err => {
+                    console.log(err)
                 })
         },
         // 測試付款
