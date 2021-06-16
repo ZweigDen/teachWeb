@@ -57,7 +57,7 @@ export default {
         <div class="d-flex justify-content-center"><button type="submit" class="btn btn-dark mb-4">付款去～</button></div>
     </v-form>
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" ref="modal">
         <div class="offcanvas-header">
             <h5 id="offcanvasRightLabel">Offcanvas right</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -88,6 +88,7 @@ export default {
         return {
             apiUrl: "https://vue3-course-api.hexschool.io",
             apiPath: "jimnycourse",
+            modal:'',
             // 表單資訊
             form: {
                 "user": {
@@ -119,6 +120,9 @@ export default {
             this.tempForm = this.form;
         }
     },
+    mounted() {
+        this.modal = new bootstrap.Offcanvas(this.$refs.modal);
+    },
     methods: {
         isPhone(value) {
             const phoneNumber = /^(09)[0-9]{8}$/
@@ -133,6 +137,7 @@ export default {
                     if (res.data.success) {
                         console.log(res);
                         this.orderData = res.data;
+                        this.openModal();
                     } else {
                         alert(res.message)
                     }
@@ -152,6 +157,9 @@ export default {
                 console.log(res);
             });
             window.location = window.location.href = url;
+        },
+        openModal(){
+            this.modal.show();
         }
     }
 }
