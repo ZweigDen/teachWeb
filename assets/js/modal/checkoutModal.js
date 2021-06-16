@@ -57,10 +57,9 @@ export default {
         <div class="d-flex justify-content-center"><button type="submit" class="btn btn-dark mb-4">付款去～</button></div>
     </v-form>
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" ref="modal">
-        <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas offcanvas-end pt-7" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" ref="modal">
+        <div class="offcanvas-header mb-3">
+            <h5 id="offcanvasRightLabel" class="text-center">訂單編號：{{ orderData.orderId }}</h5>
         </div>
         <div class="offcanvas-body">
             <div class="d-flex flex-column align-items-center">
@@ -135,11 +134,11 @@ export default {
             axios.post(api, { data: order })
                 .then(res => {
                     if (res.data.success) {
-                        console.log(res);
+                        this.tempProduct={};
                         this.orderData = res.data;
                         this.openModal();
                     } else {
-                        alert(res.message)
+                        alert('買更多')
                     }
                 }).catch(err => {
                     console.log(err)
