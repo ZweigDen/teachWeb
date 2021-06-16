@@ -50,6 +50,7 @@ const app = Vue.createApp({
                     }
                 })
         },
+        // 新增購物車商品
         addCart(id, qty = 1) {
             this.loadingStatus = id;
             const cart = {
