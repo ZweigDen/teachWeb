@@ -221,6 +221,27 @@
             </section>
             <!-- checkoutModal -->
             <checkout :product="carts"></checkout>
+            <v-form v-slot="{ errors }" @submit="onSubmit">
+                <div class="mb-3">
+                  <label for="email">E-mail</label>
+                  <v-field id="email" name="email" type="email" class="form-control"
+                  :class="{ 'is-invalid': errors['email'] }" placeholder="請輸入 Email"
+                  rules="email|required" v-model="user.email"></v-field>
+                  <error-message name="email" class="invalid-feedback"></error-message>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="name">姓名</label>
+                  <v-field id="name" name="姓名" type="text" class="form-control"
+                  :class="{ 'is-invalid': errors['姓名'] }" placeholder="請輸入姓名"
+                  rules="required" v-model="user.name"></v-field>
+                  <error-message name="姓名" class="invalid-feedback"></error-message>
+                </div>
+                
+                <div class="text-end">
+                  <button type="submit" class="btn btn-danger">送出訂單</button>
+                </div>
+                </v-form>
         </main>
         <!-- footer -->
         <footer class="border-top">

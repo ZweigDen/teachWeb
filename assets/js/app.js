@@ -1,4 +1,3 @@
-import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.esm-browser.js';
 import loginModal from './modal/loginModal.js'; //登入模型
 import customerProduct from './modal/customerProductModal.js'; //產品列表模型
 import showProduct from './modal/showProductModal.js'; //產品資訊模型
@@ -6,7 +5,7 @@ import cartModal from './modal/cartModal.js'; //購物車模型
 import checkout from './modal/checkoutModal.js'; //付款模型
 
 
-const app = createApp({
+const app = Vue.createApp({
     data() {
         return {
             // 讀取效果
@@ -15,15 +14,11 @@ const app = createApp({
             apiPath: "jimnycourse",
             products: [],
             product: {},
-            // 表單
-            form: {
-                user: {
-                    name: '',
-                    email: '',
-                    tel: '',
-                    address: '',
-                },
-                message: '',
+            user:{
+                name:"",
+                email:"",
+                tel:"",
+                address:"",
             },
             // 購物車列表
             carts: {},
@@ -138,4 +133,23 @@ const app = createApp({
         }
     }
 });
+
+VeeValidateI18n.loadLocaleFromURL('./zh_TW.json');
+
+// Activate the locale
+VeeValidate.configure({
+  generateMessage: VeeValidateI18n.localize('zh_TW'),
+  validateOnInput: true, // 調整為輸入字元立即進行驗證
+});
+
+Object.keys(VeeValidateRules).forEach(rule => {
+  if (rule !== 'default') {
+    VeeValidate.defineRule(rule, VeeValidateRules[rule]);
+  }
+});
+
+app.component('VForm', VeeValidate.Form);
+app.component('VField', VeeValidate.Field);
+app.component('ErrorMessage', VeeValidate.ErrorMessage);
+
 app.mount('#app');
